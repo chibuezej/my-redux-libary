@@ -1,0 +1,9 @@
+.count{
+    background-color: gray;
+    margin: 10px;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+}

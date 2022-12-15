@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+
+import { useSelector } from 'react-redux';
 import './App.css';
+import Counter from './components/Counter';
 
 function App() {
+  const count = useSelector((state) => (state.counter.count))
+  const voters = [
+    "Anthony Gordon",
+"Nmeregini Henry","Sarah Gadern ", "Lust Gerrad"
+  ]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Understanding Redux </h1>
+      <h2>Total Vote: {count}</h2>
+     {voters.map((voters) => {
+      return(
+        <Counter name={voters} />
+      )
+     })}
+    
     </div>
   );
 }
